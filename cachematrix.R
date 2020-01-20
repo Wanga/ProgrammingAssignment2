@@ -1,8 +1,12 @@
 ## Put comments here that give an overall description of what your
 ## functions do
+# makeCacheMatrix save a matrix's inv result, cacheSolve will 
+# return the calculated result if exist
+
+require(MASS) # for ginv
 
 ## Write a short comment describing this function
-require(MASS)
+# Create a "class" that save a matrix, inv result and methods
 
 makeCacheMatrix <- function(x = matrix()) {
 	inv <- NULL
@@ -20,6 +24,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
+# Calculate result only if it's not calculated before
 
 cacheSolve <- function(x, ...) {
 	inv<- x$getinv()
